@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+
+import addTodo from './addTodo';
 import './App.css';
+
+
+const FormField = () => {
+  const handleSubmit = () => { }
+
+  return (
+    <form className="FormInput" onSubmit={handleSubmit}>
+      <span>Add a new todo:</span>
+      <input placeholder="Enter task and press Enter" type="text" />
+    </form>
+  )
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <p className="heading">
+        Todo
+      </p>
+      <div className="wrapper">
+    <addTodo />
+    <FormField />
     </div>
+          </div>
   );
 }
 
