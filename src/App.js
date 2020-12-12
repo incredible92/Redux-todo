@@ -1,22 +1,19 @@
 import FormField from './FormField.jsx'
-import addTodo from './addTodo';
+import AddTodo from './AddTodo.jsx'
 import './App.css';
-
-
-
 
 
 function App() {
   return (
     <div className="App">
-       <p className="heading">
+      <p className="heading">
         Todo
       </p>
       <div className="wrapper">
-    <addTodo />
-    <FormField />
+        <AddTodo />
+        <FormField />
+      </div>
     </div>
-          </div>
   );
 }
 
