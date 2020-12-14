@@ -6,7 +6,11 @@ const AddTodo = () => {
     <div className="addTodo">
       {AllTodo.map((todo) => (
         <div className="todo">
-          <span>{todo.addTodo}</span>
+          {todo.done === true ? (
+            <span className="done">{todo.addTodo}</span>
+          ) : (
+            <span>{todo.addTodo}</span>
+          )}
           <img className="bin" src="/image/Vector.png" alt="bin" />
         </div>
       ))}
