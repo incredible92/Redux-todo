@@ -21,11 +21,4 @@ export const addTodo = (todo, id) => ({
   });
   
  
-  export const unexecuteTodo = (id) => ({
-    type: "UNEXECUTE_TODO",
-    payload: {
-      id,
-    },
-  });
-  
  
