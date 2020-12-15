@@ -29,13 +29,13 @@ function App() {
       <div className="addTodo">
       {AllTodo.map((todo) => (
         <div className="todo">
-          <span onClick={()=>dispatch(executeTodo(todo.id))} className={todo.done==true? "done" : ""}>{todo.todo}</span>
-          <img className="bin" src="/image/Vector.png" alt="bin"  />
+          <span onClick={()=>dispatch(executeTodo(todo.id))} className={todo.done===true? "done" : ""}>{todo.todo}</span>
+          <img className="bin" src="/image/Vector.png" alt="bin" onClick={()=>dispatch(deleteTodo(todo.id))}  />
         </div>
       ))}
     </div>
 
-      </div>
+     
 
       <div>
       <form className="FormInput" onSubmit={handleAddTodo}>
@@ -43,7 +43,7 @@ function App() {
           <input name="todo" placeholder="Enter task and press Enter" type="text" />
       </form>
       </div>
-      
+      </div>
     </div>
   )
 }
