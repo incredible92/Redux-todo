@@ -6,9 +6,10 @@ const generateId = () => Math.random().toString(36).substr(2, 4);
   ];
 
 const reducer = (state = defaultaddTodos, action) => {
+  let result;
     switch (action.type) {
       case "ADD_TODO":
-        return [
+        result = [
           ...state,
           {
             id: action.payload.id,
@@ -19,18 +20,19 @@ const reducer = (state = defaultaddTodos, action) => {
        
         break;
       case "DELETE_TODO":
-          return state.filter((todo) => todo.id !== action.payload.id);
+        result = state.filter((todo) => todo.id !== action.payload.id);
         
         break;
       case "EXECUTE_TODO":
-        return state.map((todo) => {
+        result = state.map((todo) => {
         if (todo.id === action.payload.id) todo.done = !todo.done;
           return todo})
         break;
       default:
-        return state;
+        result = state;
         break;
     }
+    return result
   };
   
   export default reducer;
